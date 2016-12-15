@@ -31,6 +31,17 @@ public class Menu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jSeparator6 = new javax.swing.JToolBar.Separator();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jSeparator7 = new javax.swing.JToolBar.Separator();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -83,35 +94,101 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
         jToolBar1.setBackground(new java.awt.Color(102, 102, 102));
+        jToolBar1.setBorder(null);
         jToolBar1.setRollover(true);
 
         jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\users-group.png")); // NOI18N
-        jButton1.setText("Cadastro de Clientes");
         jButton1.setToolTipText("Cadastro de Clientes");
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton1);
 
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\fornecedores.png")); // NOI18N
+        jButton2.setToolTipText("Cadastro de Fornecedores");
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton2);
+
+        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\funcionarios.png")); // NOI18N
+        jButton3.setToolTipText("Cadastro de Funcionários");
+        jButton3.setFocusable(false);
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton3);
+
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\telephone-operator.png")); // NOI18N
+        jButton4.setToolTipText("Cadastro de Departamentos");
+        jButton4.setFocusable(false);
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton4);
+        jToolBar1.add(jSeparator6);
+
+        jButton5.setText("jButton5");
+        jButton5.setFocusable(false);
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton5);
+
+        jButton6.setText("jButton6");
+        jButton6.setFocusable(false);
+        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton6);
+        jToolBar1.add(jSeparator7);
+
+        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\credit-card.png")); // NOI18N
+        jButton7.setToolTipText("Cadastro de Cartões");
+        jButton7.setFocusable(false);
+        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jButton7);
+
+        jButton8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\increased-revenue.png")); // NOI18N
+        jButton8.setToolTipText("Cadastro de Planos de Contas");
+        jButton8.setFocusable(false);
+        jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton8);
+
+        jButton9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\give-money.png")); // NOI18N
+        jButton9.setToolTipText("Cadastro Tipos de Pagamentos/Recebimentos");
+        jButton9.setFocusable(false);
+        jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton9);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 780, 130);
+        jPanel1.setBounds(0, 0, 780, 70);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/logo-ortiz.png"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(240, 190, 350, 220);
 
         jMenu1.setText("Cadastro");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\users-group.png")); // NOI18N
         jMenuItem1.setMnemonic('c');
         jMenuItem1.setText("Clientes");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -122,6 +199,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\man-talking-by-mic-on-a-presentation.png")); // NOI18N
         jMenuItem2.setMnemonic('f');
         jMenuItem2.setText("Fornecedores");
         jMenu1.add(jMenuItem2);
@@ -144,6 +222,7 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(jSeparator2);
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\telephone-operator.png")); // NOI18N
         jMenuItem6.setMnemonic('d');
         jMenuItem6.setText("Departamentos");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -154,12 +233,14 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(jMenuItem6);
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\business-card-identification-with-clip.png")); // NOI18N
         jMenuItem7.setMnemonic('n');
         jMenuItem7.setText("Funcionários");
         jMenu1.add(jMenuItem7);
         jMenu1.add(jSeparator3);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\credit-card.png")); // NOI18N
         jMenuItem8.setMnemonic('r');
         jMenuItem8.setText("Cartões");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
@@ -170,12 +251,14 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(jMenuItem8);
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\increased-revenue.png")); // NOI18N
         jMenuItem9.setMnemonic('o');
         jMenuItem9.setText("Plano de Contas");
         jMenuItem9.setToolTipText("t");
         jMenu1.add(jMenuItem9);
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\give-money.png")); // NOI18N
         jMenuItem10.setText("Tipos de Pagamentos/Recebimentos");
         jMenu1.add(jMenuItem10);
         jMenu1.add(jSeparator4);
@@ -287,6 +370,10 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -324,6 +411,15 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -368,6 +464,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
+    private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JToolBar.Separator jSeparator7;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
