@@ -31,8 +31,8 @@ public class Menu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jToolBar1 = new javax.swing.JToolBar();
         jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JToolBar.Separator();
         jButton5 = new javax.swing.JButton();
@@ -43,7 +43,6 @@ public class Menu extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jSeparator11 = new javax.swing.JToolBar.Separator();
         jButton10 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -102,28 +101,33 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.setBackground(new java.awt.Color(102, 102, 102));
         jToolBar1.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\users-group.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/users-group.png"))); // NOI18N
         jButton1.setToolTipText("Cadastro de Clientes");
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton1);
 
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\funcionarios.png")); // NOI18N
-        jButton3.setToolTipText("Cadastro de Funcionários");
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton3);
-
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\fornecedores.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/fornecedores.png"))); // NOI18N
         jButton2.setToolTipText("Cadastro de Fornecedores");
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton2);
 
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\telephone-operator.png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/funcionarios.png"))); // NOI18N
+        jButton3.setToolTipText("Cadastro de Funcionários");
+        jButton3.setFocusable(false);
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(jButton3);
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/departamentos.png"))); // NOI18N
         jButton4.setToolTipText("Cadastro de Departamentos");
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -131,14 +135,14 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(jButton4);
         jToolBar1.add(jSeparator6);
 
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\product-realise.png")); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/produtos.png"))); // NOI18N
         jButton5.setToolTipText("Cadastro de Produtos");
         jButton5.setFocusable(false);
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton5);
 
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\barcode.png")); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/unidade.png"))); // NOI18N
         jButton6.setToolTipText("Cadastro de Unidades");
         jButton6.setFocusable(false);
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -146,7 +150,7 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(jButton6);
         jToolBar1.add(jSeparator7);
 
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\credit-card.png")); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/credit-card.png"))); // NOI18N
         jButton7.setToolTipText("Cadastro de Cartões");
         jButton7.setFocusable(false);
         jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -158,14 +162,14 @@ public class Menu extends javax.swing.JFrame {
         });
         jToolBar1.add(jButton7);
 
-        jButton8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\increased-revenue.png")); // NOI18N
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/increased-revenue.png"))); // NOI18N
         jButton8.setToolTipText("Cadastro de Planos de Contas");
         jButton8.setFocusable(false);
         jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton8);
 
-        jButton9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\give-money.png")); // NOI18N
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/payment-method.png"))); // NOI18N
         jButton9.setToolTipText("Cadastro Tipos de Pagamentos/Recebimentos");
         jButton9.setFocusable(false);
         jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -173,7 +177,7 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(jButton9);
         jToolBar1.add(jSeparator11);
 
-        jButton10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\64\\exit.png")); // NOI18N
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/exit.png"))); // NOI18N
         jButton10.setToolTipText("Sair");
         jButton10.setFocusable(false);
         jButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -200,14 +204,10 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 820, 100);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/logo-ortiz.png"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, 120, 710, 390);
-
         jMenu1.setText("Cadastro");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\users-group.png")); // NOI18N
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24users-group.png"))); // NOI18N
         jMenuItem1.setMnemonic('c');
         jMenuItem1.setText("Clientes");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -218,33 +218,33 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\man-talking-by-mic-on-a-presentation.png")); // NOI18N
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24man-talking-by-mic-on-a-presentation.png"))); // NOI18N
         jMenuItem2.setMnemonic('f');
         jMenuItem2.setText("Fornecedores");
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\money-bag.png")); // NOI18N
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24money-bag.png"))); // NOI18N
         jMenuItem3.setMnemonic('b');
         jMenuItem3.setText("Contas Bancárias");
         jMenu1.add(jMenuItem3);
         jMenu1.add(jSeparator1);
 
         jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\barcode.png")); // NOI18N
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24barcode.png"))); // NOI18N
         jMenuItem4.setMnemonic('u');
         jMenuItem4.setText("Unidades");
         jMenu1.add(jMenuItem4);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\32\\product-realise.png")); // NOI18N
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24product-realise.png"))); // NOI18N
         jMenuItem5.setMnemonic('p');
         jMenuItem5.setText("Produtos");
         jMenu1.add(jMenuItem5);
         jMenu1.add(jSeparator2);
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\telephone-operator.png")); // NOI18N
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24telephone-operator.png"))); // NOI18N
         jMenuItem6.setMnemonic('d');
         jMenuItem6.setText("Departamentos");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
@@ -255,14 +255,14 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(jMenuItem6);
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\business-card-identification-with-clip.png")); // NOI18N
+        jMenuItem7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24business-card-identification-with-clip.png"))); // NOI18N
         jMenuItem7.setMnemonic('n');
         jMenuItem7.setText("Funcionários");
         jMenu1.add(jMenuItem7);
         jMenu1.add(jSeparator3);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\credit-card.png")); // NOI18N
+        jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24credit-card.png"))); // NOI18N
         jMenuItem8.setMnemonic('r');
         jMenuItem8.setText("Cartões");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
@@ -273,20 +273,22 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.add(jMenuItem8);
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\increased-revenue.png")); // NOI18N
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24increased-revenue.png"))); // NOI18N
         jMenuItem9.setMnemonic('o');
         jMenuItem9.setText("Plano de Contas");
         jMenuItem9.setToolTipText("t");
         jMenu1.add(jMenuItem9);
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\give-money.png")); // NOI18N
+        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24payment-method.png"))); // NOI18N
+        jMenuItem10.setMnemonic('T');
         jMenuItem10.setText("Tipos de Pagamentos/Recebimentos");
         jMenu1.add(jMenuItem10);
         jMenu1.add(jSeparator4);
 
         jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\exit.png")); // NOI18N
+        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24exit.png"))); // NOI18N
+        jMenuItem11.setMnemonic('S');
         jMenuItem11.setText("Sair");
         jMenuItem11.setToolTipText("a");
         jMenu1.add(jMenuItem11);
@@ -295,16 +297,27 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu2.setText("Movimento");
 
+        jMenuItem12.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24dollar-bill.png"))); // NOI18N
+        jMenuItem12.setMnemonic('p');
         jMenuItem12.setText("Contas a Pagar");
         jMenu2.add(jMenuItem12);
 
+        jMenuItem13.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24money.png"))); // NOI18N
+        jMenuItem13.setMnemonic('r');
         jMenuItem13.setText("Contas a Receber");
         jMenu2.add(jMenuItem13);
         jMenu2.add(jSeparator8);
 
+        jMenuItem16.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24commerce.png"))); // NOI18N
+        jMenuItem16.setMnemonic('v');
         jMenuItem16.setText("Vendas");
         jMenu2.add(jMenuItem16);
 
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24commerce-1.png"))); // NOI18N
+        jMenu6.setMnemonic('c');
         jMenu6.setText("Compras");
 
         jMenuItem18.setText("Requisição");
@@ -322,6 +335,8 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.add(jMenu6);
         jMenu2.add(jSeparator9);
 
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24cardboard-box-with-glasses.png"))); // NOI18N
+        jMenu5.setMnemonic('E');
         jMenu5.setText("Controle de Estoque");
 
         jMenuItem14.setText("Entrada de NF");
@@ -333,6 +348,8 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.add(jMenu5);
         jMenu2.add(jSeparator10);
 
+        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24coins-stacks-and-banknotes.png"))); // NOI18N
+        jMenu7.setMnemonic('t');
         jMenu7.setText("Tesouraria e Banco");
 
         jMenuItem22.setText("Emissão de Cheques");
@@ -350,7 +367,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu3.setText("Utilitários");
 
-        jMenuItem25.setIcon(new javax.swing.ImageIcon("C:\\Users\\Fernandoi\\Google Drive\\Projeto JAVA\\OrtizSoft\\Imagens\\24\\calculator.png")); // NOI18N
+        jMenuItem25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/24calculator.png"))); // NOI18N
         jMenuItem25.setText("Calculadora");
         jMenu3.add(jMenuItem25);
 
@@ -401,6 +418,10 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -447,7 +468,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
