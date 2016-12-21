@@ -5,6 +5,8 @@
     <class>br.com.ortizsoft.bean.TabBancos</class>
     <class>br.com.ortizsoft.bean.TabCartao</class>
     <class>br.com.ortizsoft.bean.TabTipoPagamento</class>
+    <class>br.com.ortizsoft.bean.TabCliente</class>
+    <class>br.com.ortizsoft.bean.TabClienteEndereco</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ortizsoft?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

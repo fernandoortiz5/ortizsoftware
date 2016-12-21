@@ -307,6 +307,8 @@ public class CartaoView extends JPanel {
                 frame.pack();
                 frame.setVisible(true);
                 frame.setLocationRelativeTo(null);
+                frame.setTitle(args[0]);
+                
             }
         });
     }

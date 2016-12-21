@@ -290,6 +290,8 @@ public class TipoPagamentoView extends JPanel {
                 frame.pack();
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
+                
+                frame.setTitle(args[0]);
             }
         });
     }

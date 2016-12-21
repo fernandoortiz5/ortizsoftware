@@ -55,23 +55,6 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="nomeBancoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="agenciaBancoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="contaBancoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="gerenteBancoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="foneBancoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="nomeBancoField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="agenciaBancoField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="contaBancoField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="gerenteBancoField" alignment="0" max="32767" attributes="0"/>
-                          <Component id="foneBancoField" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
                   <Component id="masterScrollPane" pref="551" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -87,6 +70,23 @@
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="nomeBancoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="agenciaBancoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="contaBancoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="gerenteBancoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="foneBancoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="nomeBancoField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="agenciaBancoField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="contaBancoField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="gerenteBancoField" alignment="0" max="32767" attributes="0"/>
+                          <Component id="foneBancoField" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -107,7 +107,7 @@
                   <Component id="refreshButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="saveButton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nomeBancoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="nomeBancoField" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -218,7 +218,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="foneBancoLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Telefone: *"/>
+        <Property name="text" type="java.lang.String" value="Telefone: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nomeBancoField">
@@ -260,6 +260,9 @@
         </BindingProperty>
         <BindingProperty name="enabled" source="masterTable" sourcePath="${selectedElement != null}" target="foneBancoField" targetPath="enabled" updateStrategy="1" immediately="false"/>
       </BindingProperties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="try {&#xd;&#xa;            mascara = new MaskFormatter(&quot;(##)#####-####&quot;);&#xd;&#xa;    } catch(Exception erro) {&#xd;&#xa;            JOptionPane.showMessageDialog(null, &quot;Imposs&#xed;vel inserir uma m&#xe1;scara&quot; + erro);&#xd;&#xa;}&#xd;&#xa;foneBancoField = new JFormattedTextField(mascara);"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="saveButton">
       <Properties>

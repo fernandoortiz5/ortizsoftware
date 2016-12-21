@@ -5,8 +5,6 @@
  */
 package br.com.ortizsoft.view;
 
-import javax.swing.JFrame;
-
 /**
  *
  * @author Fernandoi
@@ -41,9 +39,9 @@ public class Menu extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jSeparator7 = new javax.swing.JToolBar.Separator();
-        jButton7 = new javax.swing.JButton();
+        buttonCartoes = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        buttonPagamentos = new javax.swing.JButton();
         jSeparator11 = new javax.swing.JToolBar.Separator();
         jButton10 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -155,17 +153,17 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(jButton6);
         jToolBar1.add(jSeparator7);
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/credit-card.png"))); // NOI18N
-        jButton7.setToolTipText("Cadastro de Cartões");
-        jButton7.setFocusable(false);
-        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        buttonCartoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/credit-card.png"))); // NOI18N
+        buttonCartoes.setToolTipText("Cadastro de Cartões");
+        buttonCartoes.setFocusable(false);
+        buttonCartoes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        buttonCartoes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        buttonCartoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                buttonCartoesActionPerformed(evt);
             }
         });
-        jToolBar1.add(jButton7);
+        jToolBar1.add(buttonCartoes);
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/increased-revenue.png"))); // NOI18N
         jButton8.setToolTipText("Cadastro de Planos de Contas");
@@ -174,12 +172,17 @@ public class Menu extends javax.swing.JFrame {
         jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton8);
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/payment-method.png"))); // NOI18N
-        jButton9.setToolTipText("Cadastro Tipos de Pagamentos/Recebimentos");
-        jButton9.setFocusable(false);
-        jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton9);
+        buttonPagamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/payment-method.png"))); // NOI18N
+        buttonPagamentos.setToolTipText("Cadastro Tipos de Pagamentos/Recebimentos");
+        buttonPagamentos.setFocusable(false);
+        buttonPagamentos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        buttonPagamentos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        buttonPagamentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonPagamentosActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(buttonPagamentos);
         jToolBar1.add(jSeparator11);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/exit.png"))); // NOI18N
@@ -368,9 +371,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu5.setMnemonic('E');
         jMenu5.setText("Controle de Estoque");
 
+        jMenuItem14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/notepad.png"))); // NOI18N
         jMenuItem14.setText("Entrada de NF");
         jMenu5.add(jMenuItem14);
 
+        jMenuItem15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/currency-value.png"))); // NOI18N
         jMenuItem15.setText("Atualização de Preços");
         jMenu5.add(jMenuItem15);
 
@@ -445,12 +450,16 @@ public class Menu extends javax.swing.JFrame {
         CartaoView.main(args); 
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void buttonCartoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCartoesActionPerformed
+        String args[] = new String[1];
+        args[0] = "Cadastro de Cartões";
+        CartaoView.main(args); 
+    }//GEN-LAST:event_buttonCartoesActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String args[] = new String[1];
+        args[0] = "Cadastro de Clientes";
+        ClientesView.main(args); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -472,6 +481,12 @@ public class Menu extends javax.swing.JFrame {
        args[0] = "Cadastro de Tipos de Pagamentos/Recebimentos";
        TipoPagamentoView.main(args);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void buttonPagamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPagamentosActionPerformed
+       String args[] = new String[1];
+       args[0] = "Cadastro de Tipos de Pagamentos/Recebimentos";
+       TipoPagamentoView.main(args);
+    }//GEN-LAST:event_buttonPagamentosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -510,6 +525,8 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonCartoes;
+    private javax.swing.JButton buttonPagamentos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
@@ -517,9 +534,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;

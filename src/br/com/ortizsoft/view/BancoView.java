@@ -10,11 +10,12 @@ import java.awt.EventQueue;
 import java.beans.Beans;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import javax.persistence.RollbackException;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.text.MaskFormatter;
 
 /**
  *
@@ -22,13 +23,14 @@ import javax.swing.JPanel;
  */
 public class BancoView extends JPanel {
 
+    MaskFormatter mascara;
+
     public BancoView() {
         initComponents();
         if (!Beans.isDesignTime()) {
             entityManager.getTransaction().begin();
         }
-        
-        
+
     }
 
     /**
@@ -56,6 +58,12 @@ public class BancoView extends JPanel {
         contaBancoField = new javax.swing.JTextField();
         gerenteBancoField = new javax.swing.JTextField();
         foneBancoField = new javax.swing.JTextField();
+        try {
+            mascara = new MaskFormatter("(##)#####-####");
+        } catch(Exception erro) {
+            JOptionPane.showMessageDialog(null, "Impossível inserir uma máscara" + erro);
+        }
+        foneBancoField = new JFormattedTextField(mascara);
         saveButton = new javax.swing.JButton();
         refreshButton = new javax.swing.JButton();
         newButton = new javax.swing.JButton();
@@ -87,7 +95,7 @@ public class BancoView extends JPanel {
 
         gerenteBancoLabel.setText("Gerente:");
 
-        foneBancoLabel.setText("Telefone: *");
+        foneBancoLabel.setText("Telefone: ");
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement.nomeBanco}"), nomeBancoField, org.jdesktop.beansbinding.BeanProperty.create("text"));
         binding.setSourceUnreadableValue("null");
@@ -148,6 +156,19 @@ public class BancoView extends JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(newButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(deleteButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(refreshButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(saveButton)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nomeBancoLabel)
@@ -161,20 +182,7 @@ public class BancoView extends JPanel {
                             .addComponent(agenciaBancoField)
                             .addComponent(contaBancoField)
                             .addComponent(gerenteBancoField)
-                            .addComponent(foneBancoField)))
-                    .addComponent(masterScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(newButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(deleteButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(refreshButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(saveButton)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(foneBancoField))))
                 .addContainerGap())
         );
 
@@ -193,7 +201,7 @@ public class BancoView extends JPanel {
                     .addComponent(deleteButton)
                     .addComponent(refreshButton)
                     .addComponent(saveButton))
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nomeBancoLabel)
                     .addComponent(nomeBancoField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -270,6 +278,7 @@ public class BancoView extends JPanel {
     }//GEN-LAST:event_refreshButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+
         int[] selected = masterTable.getSelectedRows();
         List<br.com.ortizsoft.bean.TabBancos> toRemove = new ArrayList<br.com.ortizsoft.bean.TabBancos>(selected.length);
         for (int idx = 0; idx < selected.length; idx++) {
@@ -278,17 +287,16 @@ public class BancoView extends JPanel {
             entityManager.remove(t);
 
             int resultado = JOptionPane.showConfirmDialog(null, "Deseja Excluir ? ", "Excluir", JOptionPane.YES_NO_CANCEL_OPTION);
-
             /* Confirmando a exclusão de um objeto */
             if (resultado == JOptionPane.YES_OPTION) {
                 entityManager.getTransaction().commit();
                 list.removeAll(toRemove);
             }
-
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
 
     private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
+
         br.com.ortizsoft.bean.TabBancos t = new br.com.ortizsoft.bean.TabBancos();
         entityManager.persist(t);
         list.add(t);
@@ -343,7 +351,7 @@ public class BancoView extends JPanel {
     private javax.swing.JButton saveButton;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
