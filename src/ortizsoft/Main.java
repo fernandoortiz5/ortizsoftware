@@ -6,6 +6,7 @@
 package ortizsoft;
 
 import br.com.ortizsoft.view.Menu;
+import javax.swing.UIManager;
 
 /**
  *
@@ -17,6 +18,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Menu().setVisible(true);

@@ -5,18 +5,48 @@
  */
 package br.com.ortizsoft.view;
 
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author Fernandoi
  */
 public class Menu extends javax.swing.JFrame {
 
+    // Armazenando um tema padrão para aplicação
+    // com.sun.java.swing.plaf.motif.MotifLookAndFeel
+    // com.jtattoo.plaf.smat.SmartLookAndFeel
+    protected static String temaEscolhido = "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel";
+
     /**
-     * Creates new form Menu
+     * Construtor Padrão.
      */
     public Menu() {
+        temas();
         initComponents();
-        
+        //verificarLAFs();
+    }
+
+    protected void temas() {
+        try {
+            UIManager.setLookAndFeel(temaEscolhido);
+            SwingUtilities.updateComponentTreeUI(this);
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException erro) {
+            JOptionPane.showMessageDialog(null, erro);
+        }
+    }
+
+    /**
+     * Método para verificar quais Look And Feels estão instalados.
+     */
+    private void verificarLAFs() {
+        for (LookAndFeelInfo LAF : UIManager.getInstalledLookAndFeels()) {
+            System.out.println(LAF.getName());
+        }
     }
 
     /**
@@ -89,6 +119,10 @@ public class Menu extends javax.swing.JFrame {
         jMenu8 = new javax.swing.JMenu();
         jMenuItem28 = new javax.swing.JMenuItem();
         jMenuItem29 = new javax.swing.JMenuItem();
+        menu_temas = new javax.swing.JMenu();
+        item_mint = new javax.swing.JMenuItem();
+        item_alluminium = new javax.swing.JMenuItem();
+        item_mcWin = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem27 = new javax.swing.JMenuItem();
 
@@ -99,12 +133,16 @@ public class Menu extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jPanel1.setForeground(new java.awt.Color(229, 245, 250));
+        jPanel1.setAutoscrolls(true);
+        jPanel1.setLayout(null);
 
-        jToolBar1.setBackground(new java.awt.Color(102, 102, 102));
-        jToolBar1.setBorder(new javax.swing.border.MatteBorder(null));
+        jToolBar1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jToolBar1.setFloatable(false);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/users-group.png"))); // NOI18N
+        jButton1.setText("Clientes");
         jButton1.setToolTipText("Cadastro de Clientes");
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -117,6 +155,7 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(jButton1);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/fornecedores.png"))); // NOI18N
+        jButton2.setText("Fornecedores");
         jButton2.setToolTipText("Cadastro de Fornecedores");
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -124,13 +163,20 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(jButton2);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/funcionarios.png"))); // NOI18N
+        jButton3.setText("Funcionários");
         jButton3.setToolTipText("Cadastro de Funcionários");
         jButton3.setFocusable(false);
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton3);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/departamentos.png"))); // NOI18N
+        jButton4.setText("Departamentos");
         jButton4.setToolTipText("Cadastro de Departamentos");
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -139,6 +185,7 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(jSeparator6);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/produtos.png"))); // NOI18N
+        jButton5.setText("Produtos");
         jButton5.setToolTipText("Cadastro de Produtos");
         jButton5.setFocusable(false);
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -146,6 +193,7 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(jButton5);
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/unidade.png"))); // NOI18N
+        jButton6.setText("Unidades");
         jButton6.setToolTipText("Cadastro de Unidades");
         jButton6.setFocusable(false);
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -154,6 +202,7 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(jSeparator7);
 
         buttonCartoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/credit-card.png"))); // NOI18N
+        buttonCartoes.setText("Cartões");
         buttonCartoes.setToolTipText("Cadastro de Cartões");
         buttonCartoes.setFocusable(false);
         buttonCartoes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -166,6 +215,7 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(buttonCartoes);
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/increased-revenue.png"))); // NOI18N
+        jButton8.setText("Plano de Contas");
         jButton8.setToolTipText("Cadastro de Planos de Contas");
         jButton8.setFocusable(false);
         jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -173,6 +223,7 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(jButton8);
 
         buttonPagamentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/payment-method.png"))); // NOI18N
+        buttonPagamentos.setText("Pagamentos");
         buttonPagamentos.setToolTipText("Cadastro Tipos de Pagamentos/Recebimentos");
         buttonPagamentos.setFocusable(false);
         buttonPagamentos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -186,6 +237,7 @@ public class Menu extends javax.swing.JFrame {
         jToolBar1.add(jSeparator11);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/exit.png"))); // NOI18N
+        jButton10.setText("Sair");
         jButton10.setToolTipText("Sair");
         jButton10.setFocusable(false);
         jButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -197,34 +249,20 @@ public class Menu extends javax.swing.JFrame {
         });
         jToolBar1.add(jButton10);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jPanel1.add(jToolBar1);
+        jToolBar1.setBounds(10, 0, 950, 110);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 820, 100);
+        jPanel1.setBounds(0, 10, 960, 120);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/logo-ortiz copy.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(230, 170, 340, 180);
+        jLabel1.setBounds(290, 190, 340, 180);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/ortizsoft/view/imagens/Untitled-1.png"))); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(170, 350, 470, 60);
+        jLabel2.setBounds(240, 370, 470, 60);
 
         jMenu1.setText("Cadastro");
 
@@ -421,6 +459,34 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu3.add(jMenu8);
 
+        menu_temas.setText("Personalizar Temas");
+
+        item_mint.setText("Mint Tema");
+        item_mint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_mintActionPerformed(evt);
+            }
+        });
+        menu_temas.add(item_mint);
+
+        item_alluminium.setText("Aluminium Tema");
+        item_alluminium.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_alluminiumActionPerformed(evt);
+            }
+        });
+        menu_temas.add(item_alluminium);
+
+        item_mcWin.setText("McWin Tema");
+        item_mcWin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_mcWinActionPerformed(evt);
+            }
+        });
+        menu_temas.add(item_mcWin);
+
+        jMenu3.add(menu_temas);
+
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Ajuda");
@@ -432,7 +498,7 @@ public class Menu extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(835, 600));
+        setSize(new java.awt.Dimension(981, 570));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -445,26 +511,27 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-      String args[] = new String[1];
+        String args[] = new String[1];
         args[0] = "Cadastro de Cartões";
-        CartaoView.main(args); 
+        CartaoView.main(args);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void buttonCartoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCartoesActionPerformed
         String args[] = new String[1];
         args[0] = "Cadastro de Cartões";
-        CartaoView.main(args); 
+        CartaoView.main(args);
     }//GEN-LAST:event_buttonCartoesActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String args[] = new String[1];
         args[0] = "Cadastro de Clientes";
-        ClientesView.main(args); 
+        ClientesView.main(args);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * Evento para cadastro de conta bancária.
-     * @param evt 
+     *
+     * @param evt
      */
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         String args[] = new String[1];
@@ -477,26 +544,41 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-       String args[] = new String[1];
-       args[0] = "Cadastro de Tipos de Pagamentos/Recebimentos";
-       TipoPagamentoView.main(args);
+        String args[] = new String[1];
+        args[0] = "Cadastro de Tipos de Pagamentos/Recebimentos";
+        TipoPagamentoView.main(args);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     private void buttonPagamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonPagamentosActionPerformed
-       String args[] = new String[1];
-       args[0] = "Cadastro de Tipos de Pagamentos/Recebimentos";
-       TipoPagamentoView.main(args);
+        String args[] = new String[1];
+        args[0] = "Cadastro de Tipos de Pagamentos/Recebimentos";
+        TipoPagamentoView.main(args);
     }//GEN-LAST:event_buttonPagamentosActionPerformed
+
+    private void item_mintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_mintActionPerformed
+        temaEscolhido = "com.jtattoo.plaf.mint.MintLookAndFeel";
+        temas();
+    }//GEN-LAST:event_item_mintActionPerformed
+
+    private void item_alluminiumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_alluminiumActionPerformed
+        temaEscolhido = "com.jtattoo.plaf.aluminium.AluminiumLookAndFeel";
+        temas();
+    }//GEN-LAST:event_item_alluminiumActionPerformed
+
+    private void item_mcWinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_mcWinActionPerformed
+        temaEscolhido = "com.jtattoo.plaf.bernstein.BernsteinLookAndFeel";
+        temas();
+    }//GEN-LAST:event_item_mcWinActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -504,22 +586,14 @@ public class Menu extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Menu().setVisible(true);
-                
+
             }
         });
     }
@@ -527,6 +601,9 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCartoes;
     private javax.swing.JButton buttonPagamentos;
+    private javax.swing.JMenuItem item_alluminium;
+    private javax.swing.JMenuItem item_mcWin;
+    private javax.swing.JMenuItem item_mint;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
@@ -588,5 +665,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator8;
     private javax.swing.JPopupMenu.Separator jSeparator9;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JMenu menu_temas;
     // End of variables declaration//GEN-END:variables
 }
